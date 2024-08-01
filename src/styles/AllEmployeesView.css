@@ -1,0 +1,71 @@
+.card {
+    border: solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.5);
+    padding: 20px;
+    padding-bottom: 60px;
+    margin: 10px;
+    margin-bottom: 40px;
+    margin-right:40px;
+    max-width: 300px;
+    height: 400px;
+    background-color: hsl(0, 0%, 70%);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .img {
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid;
+  }
+  
+  .name {
+    font-size: 30px;
+    text-align: center;
+    
+    font-weight: bold;
+    
+  }
+  
+  .view {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .view:hover {
+    background-color: hsl(0, 0%, 100%);
+  }
+  
+  .delete {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid;
+    border-color: black;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    background-color: hsl(0, 100%, 60%);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    
+  }
+  
+  .delete:hover {
+    background-color: hsl(0, 100%, 45%);
+  }
