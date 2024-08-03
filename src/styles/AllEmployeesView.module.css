@@ -8,7 +8,7 @@
     margin-bottom: 40px;
     margin-right:40px;
     max-width: 300px;
-    height: 400px;
+    height: 450px;
     background-color: hsl(0, 0%, 70%);
     display: inline-block;
     position: relative;
@@ -23,15 +23,25 @@
     border: solid;
   }
   
-  .name {
+  .firstName, .lastName {
+    display: inline-block;
+    margin-right: 10px;
     font-size: 30px;
     text-align: center;
-    
+    align-items: center;
     font-weight: bold;
-    
   }
-  
+
+  .department {
+    margin-top: 0px;
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+  }
+ 
   .view {
+    font-weight: bold;
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -44,13 +54,17 @@
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .view:hover {
+    transform: scale(1.2);
     background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 20px 2px hsl(0, 0%, 100%)
   }
   
   .delete {
+    font-weight: bold;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -63,9 +77,36 @@
     background-color: hsl(0, 100%, 60%);
     cursor: pointer;
     transition-duration: 0.4s;
-    
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .delete:hover {
-    background-color: hsl(0, 100%, 45%);
+    transform: scale(1.2);
+    background-color: hsl(0, 100%, 60%);
+    box-shadow: 0 0 20px 2px hsl(0, 100%, 50%)
+  }
+
+  .add {
+    font-weight: bold;
+    background-color: hsl(125, 47%, 54%);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .add:hover {
+    transform: scale(1.2);
+    background-color: hsl(125, 77%, 50%);
+    box-shadow: 0 0 20px 2px hsl(125, 49%, 55%);
   }
