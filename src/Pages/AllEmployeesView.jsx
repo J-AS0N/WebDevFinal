@@ -1,4 +1,5 @@
 import '../styles/App.css'
+import { Link } from 'react-router-dom';
 import AllEmployeeCSS from '../styles/AllEmployeesView.module.css'
 import React, { useState } from 'react';
 
@@ -31,7 +32,7 @@ function AllEmployeesView() {
           </div>
         ))
       )}
-    <button className={AllEmployeeCSS.add}> Add </button>
+    <Link to="/AddEmployee" style={{textDecoration: 'none'}}> <button className={AllEmployeeCSS.add}> Add </button> </Link>
     </div>
   );
 }
