@@ -27,7 +27,7 @@ function AllEmployeesView() {
             <h2 className={AllEmployeeCSS.firstName}> {card.firstName} </h2>
             <h2 className={AllEmployeeCSS.lastName}> {card.lastName} </h2>
             <h3 className={AllEmployeeCSS.department}> {card.department} </h3>
-            <button className={AllEmployeeCSS.view}> View </button>
+            <Link to="/SingleEmployeeView"> <button className={AllEmployeeCSS.view}> View </button> </Link>
             <button className={AllEmployeeCSS.delete} onClick={() => handleDelete(card.id)}> Delete </button>
           </div>
         ))
