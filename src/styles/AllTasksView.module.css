@@ -98,6 +98,24 @@ li {
     border-radius: 10px;
 }
 
+.view {
+    font-weight: bold;
+    background-color: white;
+    padding: 10px 12px;
+    margin-left: 0px;
+    border: 1px none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.view:hover {
+    transform: scale(1.2);
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 15px 2px hsl(0, 0%, 100%);
+}
+
 .delete {
     font-weight: bold;
     background-color: hsl(0, 100%, 50%);

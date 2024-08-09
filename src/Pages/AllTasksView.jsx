@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import AllTasksViewCSS from '../styles/AllTasksView.module.css'
+import { Link } from 'react-router-dom';
 
 function AllTasksView() {
     const [tasks, setTasks] = useState([]);
@@ -47,6 +48,7 @@ function AllTasksView() {
                             <div className={AllTasksViewCSS.buttoncontainer}>
                                 <button className={AllTasksViewCSS.priority}> Priority Level: <br/>High </button>
                                 <button className={AllTasksViewCSS.status}> Status: <br/> COMPLETE </button>
+                                <Link to={`/SingleTaskView/${index}`}> <button className={AllTasksViewCSS.view}> View </button> </Link>
                                 <button className={AllTasksViewCSS.delete} onClick={() => deleteTask(index)}> Delete </button>
                             </div>
                         </li>

@@ -3,7 +3,7 @@ import blankProfilePic from '../assets/blank.webp';
 import { Link } from 'react-router-dom';
 import AllEmployeeCSS from '../styles/AllEmployeesView.module.css'
 
-function AllEmployeesView({employees, onDelete}) {;
+function AllEmployeesView({employees, onDelete}) {
 
 
   // Cards Component (objects)
