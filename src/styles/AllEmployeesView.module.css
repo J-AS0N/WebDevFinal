@@ -110,3 +110,25 @@
     background-color: hsl(125, 77%, 50%);
     box-shadow: 0 0 20px 2px hsl(125, 49%, 55%);
   }
+
+  .back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    background-color: hsl(195, 100%, 80%);
+    padding: 10px 15px;
+    margin: 5px 2px;
+    border: 1px none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back:hover {
+    transform: scale(1.2);
+    background-color: hsl(195, 100%, 78%);
+    box-shadow: 0 0 10px 2px hsl(195, 100%, 85%);
+}

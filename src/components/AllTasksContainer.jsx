@@ -1,19 +1,22 @@
 import AllTasksView from "../Pages/AllTasksView";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {fetchTasks} from '../Redux Store/TasksSlice';
+import {fetchTasks, deleteTask} from '../Redux Store/TasksSlice';
 
 function AllTasksContainer() {
     const tasks = useSelector((state) => state.tasks);
     const dispatch = useDispatch();
+
+
+    const deleteDispatch = (taskId) => dispatch(deleteTask(taskId));
 
     useEffect(() => {
         dispatch(fetchTasks());
     }, [dispatch])
 
     return (
-        <AllTasksView />
-    )
+        <AllTasksView tasks={tasks} deleteTask={deleteDispatch} />
+    );
 }
 
 export default AllTasksContainer;

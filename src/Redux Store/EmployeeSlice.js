@@ -15,12 +15,12 @@ export function employeesReducer(state = initialState, action) {
 //API calls go here
 import axios from "axios";
 //PATH (should be where your server is running)
-const PATH = "https://jsonplaceholder.typicode.com";
+const PATH = "http://localhost:5001/api/employees";
 
 //Thunk 
 export const fetchEmployees = () => async (dispatch) => {
   try {
-    let response = await axios.get(`${PATH}/users`);
+    let response = await axios.get(`${PATH}`);
     dispatch({type: 'employees/employeesLoaded', payload: response.data});
   } catch(error) {
     console.error(error);
@@ -29,7 +29,7 @@ export const fetchEmployees = () => async (dispatch) => {
 
 export const deleteEmployee = (id) => async (dispatch) => {
     try {
-        await axios.delete(`${PATH}/users/${id}`);
+        await axios.delete(`${PATH}/${id}`);
         dispatch({type: 'employees/employeeDeleted', payload: id});
     } catch (error) {
         console.log(error);
