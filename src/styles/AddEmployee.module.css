@@ -1,50 +1,69 @@
 .container {
-    border: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 100px;
-    background-color: hsl(0, 0%, 80%);
-    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
     text-align: center;
+    color: #2c3e50;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .input {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 25px;
-    border: 1px solid;
-    border-color: hsl(0, 0%, 70%);
-    border-radius: 10px;
-    margin: 50px 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
 
+.input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #7f8c8d;
 }
 
 
 .add {
-    font-weight: bold;
-    background-color: hsl(125, 47%, 54%);
-    padding: 10px 24px;
-    margin: 5px;
-    border: 1px none;
-    border-radius: 4px;
+    padding: 12px;
+    width: 40%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    color: white;
-    transition-duration: 0.4s;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #3498db;
+    color: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
 
+.add:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: hsl(204, 70%, 53%);
+}
 
-  .add:hover {
-    transform: scale(1.2);
-    background-color: hsl(125, 77%, 50%);
-    box-shadow: 0 0 20px 2px hsl(125, 49%, 55%);
-  }
+.text1 {
+    font-size: 18px;
+    color: #2c3e50;
+    text-align: center;
+    margin: 0px;
+}

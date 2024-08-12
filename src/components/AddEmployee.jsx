@@ -35,7 +35,7 @@ function AddEmployee({onAddEmployee}) {
     return(
         <div className={AddEmployeeCSS.container}>
             <h1 className={AddEmployeeCSS.text}> Add New Employee </h1>
-            <form onSubmit={handleSubmit}>
+            <form className={AddEmployeeCSS.form} onSubmit={handleSubmit}>
                 <input className={AddEmployeeCSS.input}
                     type="text"
                     placeholder="Enter First Name"
@@ -57,8 +57,8 @@ function AddEmployee({onAddEmployee}) {
                     onChange={handleDepartmentChange}
                 />
 
-                <p> Name: {firstName} {lastName}</p>
-                <p> Department: {department} </p>
+                <p className={AddEmployeeCSS.text1}> Name: {firstName} {lastName}</p>
+                <p className={AddEmployeeCSS.text1}> Department: {department} </p>
 
                 <button className={AddEmployeeCSS.add} type="submit"> CONFIRM </button>
             </form>

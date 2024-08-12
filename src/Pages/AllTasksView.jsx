@@ -82,7 +82,7 @@ function AllTasksView({ tasks, deleteTask }) {
                     {task.description}
                     <div className={AllTasksViewCSS.buttoncontainer}>
                       <p className={`${AllTasksViewCSS.priority} ${priorityStyle(task.priority)}`}> Priority Level: <br/> {task.priority} </p>
-                      <p className={`${AllTasksViewCSS.status} ${statusStyle(task.status)}`}> Status: <br/> {task.isComplete ? 'Complete' : 'Incomplete'} </p>
+                      <p className={`${AllTasksViewCSS.status} ${statusStyle(task.isComplete)}`}> Status: <br/> {task.isComplete ? 'Complete' : 'Incomplete'} </p>
                       <button className={AllTasksViewCSS.view} onClick={() => viewTask(task)}> View </button>
                       <button className={AllTasksViewCSS.delete} onClick={() => deleteTask(task.id)}> Delete </button>
                     </div>
@@ -96,13 +96,14 @@ function AllTasksView({ tasks, deleteTask }) {
         {modal && (
           <div className={AllTasksViewCSS.modalOverlay} onClick={toggleModal}>
             <div className={AllTasksViewCSS.modalContent} onClick={e => e.stopPropagation()}>
-              <h2> Single Task View </h2>
-              <p> {selectedTask.name} </p>
-              <p> {selectedTask.description} </p>
+              <h2> Task Details </h2>
+              {/* <p> Task Name </p> */}
+              <p className={AllTasksViewCSS.p}> Task: <b> {selectedTask.description} </b> </p>
+              <p className={AllTasksViewCSS.p}> Assigned to: <b> {selectedTask.employee.firstname} {selectedTask.employee.lastname} </b></p>
               
               <div className={AllTasksViewCSS.PS}> 
-                <p> Priority: {selectedTask.priority} </p>
-                <p> Status: {selectedTask.isComplete ? 'Complete' : 'Incomplete'} </p>
+                <p className={`${priorityStyle(selectedTask.priority)}`}> Priority: {selectedTask.priority} </p>
+                <p className={`${statusStyle(selectedTask.isComplete)}`}> Status: {selectedTask.isComplete ? 'Complete' : 'Incomplete'} </p>
               </div>
   
               <button className={AllTasksViewCSS.modalDelete} onClick={toggleModal}> Close </button>
