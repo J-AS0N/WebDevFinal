@@ -1,5 +1,5 @@
 import '../styles/App.css'
-import blankProfilePic from '../assets/blank.webp';
+import blankProfilePic from '../assets/temp.jpg';
 import { Link } from 'react-router-dom';
 import AllEmployeeCSS from '../styles/AllEmployeesView.module.css'
 
@@ -19,9 +19,9 @@ function AllEmployeesView({employees, onDelete}) {
           employees.map(employee => (
             <div className={AllEmployeeCSS.card} key={employee.id}>
               <img className={AllEmployeeCSS.img} src={blankProfilePic}/>
-              <h2 className={AllEmployeeCSS.firstName}> {employee.firstname} </h2>
-              <h2 className={AllEmployeeCSS.lastName}> {employee.lastname} </h2>
-              <h3 className={AllEmployeeCSS.department}> {employee.department} </h3>
+              <h1 className={AllEmployeeCSS.name}> {employee.firstname} {employee.lastname}</h1>
+              <p className={AllEmployeeCSS.department}> {employee.department || "N/A"} </p>
+              {/* <p> Employee ID: {employee.id} </p> */}
               <Link to={`/SingleEmployeeView/${employee.id}`}> <button className={AllEmployeeCSS.view}> View </button> </Link>
               <button className={AllEmployeeCSS.delete} onClick={() => onDelete(employee.id)}> Delete </button>
             </div>
