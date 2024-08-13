@@ -96,10 +96,10 @@ function AllTasksView({ tasks, deleteTask }) {
         {modal && (
           <div className={AllTasksViewCSS.modalOverlay} onClick={toggleModal}>
             <div className={AllTasksViewCSS.modalContent} onClick={e => e.stopPropagation()}>
-              <h2> Task Details </h2>
+              <h2> <u> Task Details </u> </h2>
               {/* <p> Task Name </p> */}
               <p className={AllTasksViewCSS.p}> Task: <b> {selectedTask.description} </b> </p>
-              <p className={AllTasksViewCSS.p}> Assigned to: <b> {selectedTask.employee.firstname} {selectedTask.employee.lastname} </b></p>
+              <p className={AllTasksViewCSS.p}> Assigned to: <b> {selectedTask.employee ? `${selectedTask.employee.firstname} ${selectedTask.employee.lastname}` : 'Unassigned'} </b></p>
               
               <div className={AllTasksViewCSS.PS}> 
                 <p className={`${priorityStyle(selectedTask.priority)}`}> Priority: {selectedTask.priority} </p>
@@ -107,6 +107,7 @@ function AllTasksView({ tasks, deleteTask }) {
               </div>
   
               <button className={AllTasksViewCSS.modalDelete} onClick={toggleModal}> Close </button>
+              <button className={AllTasksViewCSS.modalEdit}> Edit </button>
             </div>
           </div>
         )}

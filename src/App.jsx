@@ -11,7 +11,6 @@ import SingleTaskView from './components/SingleTaskView'
 
 function App() {
   return (
-    
     <div>
       {/* <SingleEmployeeView/> */}
        <Router>
@@ -20,7 +19,7 @@ function App() {
           <Route path="/AllEmployeesView" element={<AllEmployeesContainer/>}/>
           <Route path="/AllTasksView" element={<AllTasksContainer/>}/>
           <Route path="/AddEmployee" element={<AddEmployee/>}/>
-          <Route path="/SingleEmployeeView" element={<SingleEmployeeView/>}/>
+          <Route path="/SingleEmployeeView/:id" element={<SingleEmployeeView/>}/>
           <Route path="/SingleTaskView" element={<SingleTaskView/>}/>
         </Routes>
       </Router>

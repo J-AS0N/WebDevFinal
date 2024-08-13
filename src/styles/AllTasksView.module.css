@@ -245,11 +245,11 @@ li {
 
 .modalDelete {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     right: 10px;
     font-weight: bold;
     background-color: hsl(0, 100%, 50%);
-    padding: 10px 12px;
+    padding: 10px 16px;
     border: 1px none;
     border-radius: 10px;
     cursor: pointer;
@@ -265,6 +265,23 @@ li {
     box-shadow: 0 0 8px 2px hsl(0, 100%, 55%);
 }
 
-.p {
-    font-size: 20px;
+.modalEdit {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 1px none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 2px 2px 4px #888888;
+}
+
+.modalEdit:hover {
+    transform: scale(1.2);
+    background-color: hsl(0, 0%, 60%);
 }
