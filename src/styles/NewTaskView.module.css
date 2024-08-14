@@ -1,0 +1,86 @@
+.container {
+    background-color: #f4f4f4;
+    width: 60%;
+    margin: 2rem auto; 
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    position: relative;
+}
+
+.title {
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+
+.priorityLevel {
+    margin-bottom: 1rem;
+    margin: 20px;
+}
+
+label {
+    margin-right: 15px;
+}
+
+.select {
+    margin-left: 4px;
+    padding: 4px 0;
+}
+
+.newtaskform {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background-color: rgba(128, 128, 128, 0.223);
+    border-radius: 4px;
+
+}
+
+.taskContent {
+    width: 30%;
+    padding: 6px;
+}
+
+.save {
+    align-self: center;
+    background-color: hsl(125, 47%, 54%);
+    font-weight: bold;
+    margin-top: 50px;
+    padding: 10px 20px;
+    color: white;
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 4px 4px 4px #888888;
+}
+
+.save:hover {
+    transform: scale(1.2);
+    background-color: hsl(125, 77%, 50%);
+    box-shadow: 0 0 20px 2px hsl(125, 49%, 55%);
+}
+
+.back {
+    background-color: hsl(203, 90%, 50%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 4px 4px 4px #888888;
+}
+
+.back:hover {
+    transform: scale(1.2);
+    background-color: hsl(195, 100%, 78%);
+    box-shadow: 0 0 10px 2px hsl(195, 100%, 80%);
+}

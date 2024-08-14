@@ -13,11 +13,6 @@ function AllTasksView({ tasks, deleteTask }) {
     }
   
     function addTask() {
-      if (newTask.trim() === "") {
-        alert("Please fill out the field.");
-        return;
-      }
- 
       setTasks(t => [...t, { name: newTask, priority: 'Low', isComplete: false }]);
       setNewTask("");
     }
@@ -61,15 +56,7 @@ function AllTasksView({ tasks, deleteTask }) {
         <div className={AllTasksViewCSS.container}>
           <div className={AllTasksViewCSS.container2}>
             <h1 className={AllTasksViewCSS.text}>Tasks</h1>
-            <input
-              className={AllTasksViewCSS.input}
-              type="text"
-              placeholder="Enter Task"
-              value={newTask}
-              onChange={handleInput}
-              onKeyDown={handleEnter}
-            />
-            <button className={AllTasksViewCSS.add} onClick={addTask}> Add </button>
+            <Link to="/NewTaskView"> <button className={AllTasksViewCSS.add} onClick={addTask}> Add Tasks </button> </Link>
           </div>
   
           <div className={AllTasksViewCSS.container3}>
