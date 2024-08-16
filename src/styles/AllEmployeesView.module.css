@@ -134,7 +134,7 @@
 }
 
 .back:hover {
-    transform: scale(1.2);
-    background-color: hsl(195, 100%, 78%);
-    box-shadow: 0 0 10px 2px hsl(195, 100%, 85%);
+  transform: scale(1.2);
+  background-color: hsl(195, 100%, 78%);
+  box-shadow: 0 0 10px 2px hsl(195, 100%, 85%);
 }

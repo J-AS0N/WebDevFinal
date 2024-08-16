@@ -7,6 +7,8 @@ export function employeesReducer(state = initialState, action) {
         return action.payload;
       case 'employees/employeeDeleted':
         return state.filter(employee => employee.id !== action.payload);
+      case 'employees/employeeAdded':
+        return [...state, action.payload]
       default:
         return state;
     }
@@ -34,4 +36,13 @@ export const deleteEmployee = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+export const addEmployee = (employee) => async (dispatch) => {
+  try {
+    let response = await axios.post(`${PATH}`, employee);
+    dispatch({type: 'employees/employeeAdded', payload: response.data })
+  } catch (error) {
+    console.log(error)
+  }
 }
