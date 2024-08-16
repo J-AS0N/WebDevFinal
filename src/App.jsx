@@ -5,6 +5,7 @@ import AllTasksContainer from './components/AllTasksContainer.jsx';
 import AddEmployee from './components/AddEmployee';
 import SingleEmployeeView from './components/SingleEmployeeView'
 import NewTaskContainer from './components/NewTaskContainer.jsx';
+import EditTaskContainer from './components/EditTaskContainer.jsx';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/AddEmployee" element={<AddEmployee/>}/>
           <Route path="/SingleEmployeeView/:id" element={<SingleEmployeeView/>}/>
           <Route path="/NewTaskView" element={<NewTaskContainer/>}/>
+          <Route path="/EditTaskView/:taskId" element={<EditTaskContainer/>}/>
         </Routes>
       </Router>
     </div>

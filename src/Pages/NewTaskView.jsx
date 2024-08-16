@@ -15,7 +15,7 @@ function NewTaskView({ handleSubmit, employees }) {
           <input type="radio" name="taskPriority" value="High" /> High
         </label>
       </p>
-      </div>
+    </div>
   );
 
   let selectEmployee = (
