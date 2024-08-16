@@ -71,7 +71,7 @@ function AllTasksView({ tasks, deleteTask }) {
               <h2> <u> Task Details </u> </h2>
               {/* <p> Task Name </p> */}
               <p className={AllTasksViewCSS.p}> Task: <b> {selectedTask.description} </b> </p>
-              <p className={AllTasksViewCSS.p}> Assigned to: <b> {selectedTask.employee ? `${selectedTask.employee.firstname} ${selectedTask.employee.lastname}` : 'Unassigned'} </b></p>
+              <p className={AllTasksViewCSS.p}> Assigned to: <Link to={`/SingleEmployeeView/${selectedTask.employeeId}`}> <b> {selectedTask.employee ? `${selectedTask.employee.firstname} ${selectedTask.employee.lastname}` : 'Unassigned'} </b> </Link> </p>
               
               <div className={AllTasksViewCSS.PS}> 
                 <p className={`${priorityStyle(selectedTask.priority)}`}> Priority: {selectedTask.priority} </p>

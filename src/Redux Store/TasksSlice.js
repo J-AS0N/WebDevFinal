@@ -20,6 +20,7 @@ export function tasksReducer(state = initialState, action) {
 
 //API calls go here
 import axios from "axios";
+import { fetchEmployees } from "./EmployeeSlice";
 //PATH (should be where your server is running)
 const PATH = "http://localhost:5001/api/tasks";
 
@@ -49,6 +50,11 @@ export const addTask = task => async (dispatch) => {
   try {
     let res = await axios.post(`${PATH}`, task);
     dispatch({type: 'tasks/taskCreated', payload: res.data});
+
+    if (res.data.employeeId) {
+      dispatch(fetchEmployees());
+    }
+    
     return res.data;
   } catch(err) {
     console.error(err);
