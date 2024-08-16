@@ -15,14 +15,16 @@ function SingleEmployeeView() {
     const [currentTask, setCurrentTask] = useState(null);
     
 
-useEffect(() => {
-    const employeeId = parseInt(id);
-    const foundEmployee = employees.find(emp => emp.id === employeeId);
-    if(foundEmployee) {
-        setEmployee(foundEmployee);
-        setTasks(foundEmployee.tasks || []);
-    } 
-}, [id, employees]);
+    useEffect(() => {
+        const fetchEmployeeData = async () => {
+            const employeeId = parseInt(id);
+            const response = await fetch(`http://localhost:5001/api/employees/${employeeId}`);
+            const data = await response.json();
+            setEmployee(data);
+            setTasks(data.tasks || []);
+        };
+        fetchEmployeeData();
+    }, [id]);
 
 
     // Delete Task
