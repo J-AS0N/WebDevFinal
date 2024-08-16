@@ -79,7 +79,7 @@ function AllTasksView({ tasks, deleteTask }) {
               </div>
   
               <button className={AllTasksViewCSS.modalDelete} onClick={toggleModal}> Close </button>
-              <button className={AllTasksViewCSS.modalEdit}> Edit </button>
+              <Link to={`/EditTaskView/${selectedTask.id}`}> <button className={AllTasksViewCSS.modalEdit}> Edit </button> </Link>
             </div>
           </div>
         )}

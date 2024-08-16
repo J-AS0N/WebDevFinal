@@ -51,7 +51,7 @@ function SingleEmployeeView() {
     }
 
     if(!employee) {
-        return <p> Loading... </p>;
+        return <p> No employees found. </p>;
     }
     
     const priorityStyle = (priority) => {
