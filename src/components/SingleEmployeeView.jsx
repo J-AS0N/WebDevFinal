@@ -1,15 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import SingleEmployeeViewCSS from '../styles/SingleEmployeeView.module.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteTask, fetchTasks } from '../Redux Store/TasksSlice';
 import blankProfilePic from '../assets/temp.jpg';
 
 
 function SingleEmployeeView() {
     const { id } = useParams();
-    const employees = useSelector(state => state.employees); 
     const [employee, setEmployee] = useState(null);
     const [tasks, setTasks] = useState([]);
+
+    const dispatch = useDispatch();
+    const allTasks = useSelector(state => state.tasks);
 
     const[modal, setModal] = useState(false);
     const [currentTask, setCurrentTask] = useState(null);
@@ -21,16 +24,20 @@ function SingleEmployeeView() {
             const response = await fetch(`http://localhost:5001/api/employees/${employeeId}`);
             const data = await response.json();
             setEmployee(data);
-            setTasks(data.tasks || []);
         };
         fetchEmployeeData();
-    }, [id]);
+        dispatch(fetchTasks());
+    }, [id, dispatch]);
+
+    useEffect(() => {
+        const employeeTasks = allTasks.filter(task => task.employeeId === parseInt(id));
+        setTasks(employeeTasks);
+    }, [allTasks, id])
 
 
     // Delete Task
-    function deleteTask(index) {
-        const updatedTasks = tasks.filter((_, i) => i !== index);
-        setTasks(updatedTasks);
+    function handleDeleteTask(taskId) {
+        dispatch(deleteTask(taskId));
     }
 
     const openModal = (task) => {
@@ -85,7 +92,7 @@ function SingleEmployeeView() {
                             <span className={SingleEmployeeViewCSS.text}> {task.description} </span>
                             <div className={SingleEmployeeViewCSS.buttonContainer}>
                                 <button className={SingleEmployeeViewCSS.view} onClick={() => openModal(task)}> View </button>
-                                <Link to={`/SingleEmployeeView/${employee.id}`}></Link><button className={SingleEmployeeViewCSS.delete} onClick={() => deleteTask(index)}> Delete </button>
+                                <Link to={`/SingleEmployeeView/${employee.id}`}></Link><button className={SingleEmployeeViewCSS.delete} onClick={() => handleDeleteTask(task.id)}> Delete </button>
                             </div>
                         </li>
                     )}
