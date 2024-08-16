@@ -10,7 +10,6 @@ function SingleEmployeeView() {
     const employees = useSelector(state => state.employees); 
     const [employee, setEmployee] = useState(null);
     const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState("");
 
     const[modal, setModal] = useState(false);
     const [currentTask, setCurrentTask] = useState(null);
@@ -25,18 +24,6 @@ useEffect(() => {
     } 
 }, [id, employees]);
 
-    function handleInputChange(event) {
-        setNewTask(event.target.value);
-    }
-
-    // Add Task
-    function addTask() {
-        if(newTask.trim() !== "") {
-            setTasks(t => [...t, newTask]);
-            setNewTask("");
-        }   
-        
-    }
 
     // Delete Task
     function deleteTask(index) {
@@ -57,6 +44,7 @@ useEffect(() => {
     if(!employee) {
         return <p> Loading... </p>;
     }
+    
     const priorityStyle = (priority) => {
         switch (priority) {
             case 'High':

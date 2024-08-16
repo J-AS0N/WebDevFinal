@@ -4,7 +4,6 @@ import AllEmployeesContainer from './components/AllEmployeesContainer.jsx';
 import AllTasksContainer from './components/AllTasksContainer.jsx';
 import AddEmployee from './components/AddEmployee';
 import SingleEmployeeView from './components/SingleEmployeeView'
-import SingleTaskView from './components/SingleTaskView'
 import NewTaskContainer from './components/NewTaskContainer.jsx';
 
 
@@ -19,7 +18,6 @@ function App() {
           <Route path="/AllTasksView" element={<AllTasksContainer/>}/>
           <Route path="/AddEmployee" element={<AddEmployee/>}/>
           <Route path="/SingleEmployeeView/:id" element={<SingleEmployeeView/>}/>
-          <Route path="/SingleTaskView" element={<SingleTaskView/>}/>
           <Route path="/NewTaskView" element={<NewTaskContainer/>}/>
         </Routes>
       </Router>

@@ -4,24 +4,9 @@ import { Link } from 'react-router-dom';
 
 
 function AllTasksView({ tasks, deleteTask }) {
-    const [newTask, setNewTask] = useState("");
     const [modal, setModal] = useState(false);
     const [selectedTask, setSelectedTask] = useState(null);
   
-    function handleInput(event) {
-      setNewTask(event.target.value);
-    }
-  
-    function addTask() {
-      setTasks(t => [...t, { name: newTask, priority: 'Low', isComplete: false }]);
-      setNewTask("");
-    }
-  
-    function handleEnter(event) {
-      if (event.key === 'Enter') {
-        addTask();
-      }
-    }
   
     function viewTask(task) {
       setSelectedTask(task);
@@ -56,7 +41,7 @@ function AllTasksView({ tasks, deleteTask }) {
         <div className={AllTasksViewCSS.container}>
           <div className={AllTasksViewCSS.container2}>
             <h1 className={AllTasksViewCSS.text}>Tasks</h1>
-            <Link to="/NewTaskView"> <button className={AllTasksViewCSS.add} onClick={addTask}> Add Tasks </button> </Link>
+            <Link to="/NewTaskView"> <button className={AllTasksViewCSS.add}> Add Tasks </button> </Link>
           </div>
   
           <div className={AllTasksViewCSS.container3}>
