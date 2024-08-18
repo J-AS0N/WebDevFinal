@@ -78,6 +78,7 @@ function SingleEmployeeView() {
                 <img className={SingleEmployeeViewCSS.img} src={blankProfilePic}/>
                 <h1 className={SingleEmployeeViewCSS.name}> {employee.firstname} {employee.lastname} </h1>
                 <p className={SingleEmployeeViewCSS.department}> {employee.department} </p>
+                <Link to="/NewTaskView"> <button className={SingleEmployeeViewCSS.add}> Add Tasks </button> </Link>
 
                 <Link to="/AllEmployeesView"><button className={SingleEmployeeViewCSS.back}> Back </button></Link>
 
@@ -96,6 +97,7 @@ function SingleEmployeeView() {
                             </div>
                         </li>
                     )}
+                    <Link to={`/EditEmployeeView/${employee.id}`} > <button className={SingleEmployeeViewCSS.edit}> Edit </button> </Link>
                 </ol>
                 )}
             </div>

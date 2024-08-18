@@ -1,0 +1,86 @@
+.container {
+    background-color: #f4f4f4;
+    width: 60%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.editForm {
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 30px;
+}
+
+.label {
+    display: block; 
+    margin-bottom: 10px; 
+    text-align: left;
+    width: 50%;
+}
+
+.firstname, .lastname, .department {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%; 
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px; 
+}
+
+.firstname:focus, .lastname:focus, .department:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.save {
+    align-self: center;
+    background-color: hsl(125, 47%, 54%);
+    font-weight: bold;
+    margin-top: 12px;
+    padding: 10px 20px;
+    color: white;
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 4px 4px 4px #888888;
+}
+
+.save:hover {
+    transform: scale(1.2);
+    background-color: hsl(125, 77%, 50%);
+    box-shadow: 0 0 20px 2px hsl(125, 49%, 55%);
+}
+
+.back {
+    background-color: hsl(203, 90%, 50%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition-duration: 0.4s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 4px 4px 4px #888888;
+}
+
+.back:hover {
+    transform: scale(1.2);
+    background-color: hsl(195, 100%, 78%);
+    box-shadow: 0 0 10px 2px hsl(195, 100%, 80%);
+}

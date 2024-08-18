@@ -39,6 +39,10 @@ function AllEmployeesView() {
               <Link to={`/SingleEmployeeView/${employee.id}`}>
                 <button className={AllEmployeeCSS.view}> View </button>
               </Link>
+
+              <Link to={`/EditEmployeeView/${employee.id}`}>
+                <button className={AllEmployeeCSS.edit}> Edit </button>
+              </Link>
               <button className={AllEmployeeCSS.delete} onClick={() => handleDelete(employee.id)}> Delete </button>
             </div>
           ))
